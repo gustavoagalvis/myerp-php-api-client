@@ -7,7 +7,7 @@ class MyERP{
 
     public static $DEFAULT_PARAMS  = [
       'protocol' => 'https',
-      'host' => 'api.myerp.com',
+      'host' => 'api.oneup.com',
       'port' => 443,
       'prefix' => '/v1/'
     ];

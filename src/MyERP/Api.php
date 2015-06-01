@@ -120,8 +120,7 @@ abstract class Api{
             $headers = $response->getHeaders();
         }
         catch(HttpException $e){
-            $response = json_decode($e->getResponse()->getBody(), true);
-            throw new APIException($response['error']['message'], $response['error']['code'], isset($response['error']['reason']) ? $response['error']['reason'] : '', $e);
+            throw new APIException($e->getMessage());
         }
 
         return new ApiResponse($headers, json_decode($body, true));
