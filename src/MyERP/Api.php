@@ -123,6 +123,7 @@ abstract class Api{
             throw new APIException($e->getMessage());
         }
 
+        $body = is_null(json_decode($body, true)) ? [] : json_decode($body, true);
         return new ApiResponse($headers, json_decode($body, true));
     }
 
