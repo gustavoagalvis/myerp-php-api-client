@@ -124,7 +124,7 @@ abstract class Api{
         }
 
         $body = is_null(json_decode($body, true)) ? [] : json_decode($body, true);
-        return new ApiResponse($headers, json_decode($body, true));
+        return new ApiResponse($headers, $body);
     }
 
     private function getUrl($id = null) {
